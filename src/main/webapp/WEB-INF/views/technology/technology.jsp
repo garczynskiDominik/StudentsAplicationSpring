@@ -4,14 +4,14 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 
-<%@include file="dynamic/css.jspf"%>
+<%@include file="../dynamic/css.jspf"%>
 
 <body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <%@include file="dynamic/navigationMain.jspf"%>
+    <%@include file="../dynamic/navigationMain.jspf"%>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -194,10 +194,10 @@
         </div>
         <!-- End of Main Content -->
 
-        <%@include file="dynamic/boad.jspf"%>
+        <%@include file="../dynamic/boad.jspf"%>
 
 
-<%@include file="dynamic/javaScript.jspf"%>
+<%@include file="../dynamic/javaScript.jspf"%>
 
 </body>
 
