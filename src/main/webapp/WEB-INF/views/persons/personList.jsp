@@ -60,7 +60,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Imię nazwisko</span>
-               
+
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -83,8 +83,8 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-        
-        
+
+
                      <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Kursanci</h1>
                 <p class="mb-4">Wszyscy kursanci biorący udział w szkoleniu - SDA | <a
@@ -131,16 +131,16 @@
                                          <td>${title.start}</td>
                                         <td><a href="#" role="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#umiejetnosci"><i class="fas
                                         fa-check"></i></a></td>
-                                       
+
                                         <td><a href='<c:url value="/editPerson/${title.id}"/>'
                                                class="btn-right btn btn-primary" role="button">Edytuj</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
-                             
-                               
-                               
-                               
+
+
+
+
                 <!-- The Modal -->
 <div class="modal" id="umiejetnosci">
 <div class="modal-dialog">
@@ -162,21 +162,26 @@
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold
               text-primary">Umiejętności</h6>
+
             </div>
             <div class="card-body">
+
+
+
+//tutaj probuje cos ogarnac te pola z javy
               <h4 class="small
               font-weight-bold">Java <span
-              class="float-right">50%</span></h4>
+              class="float-right">${skills.java.intValue()}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: ${skills.java.intValue()}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+
+
+
               </div>
               <h4 class="small
               font-weight-bold">Wzorce
               projektowe
-               <span
-
-<%--                       przekazac pola tutaj--%>
-               class="float-right">50%</span></h4>
+               <span class="float-right">${skills.java}</span></h4>
               <div class="progress mb-4">
                 <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -232,6 +237,7 @@
 
 
 
+
         </div>
 
         <!-- Modal footer -->
@@ -244,8 +250,8 @@
 
         </div>
     </div>
-</div>                 
-           
+</div>
+
                                 </tbody>
                             </table>
 
@@ -255,8 +261,8 @@
                 </div>
 
 
-   
-    
+
+
 
         </div>
         <!-- /.container-fluid -->
@@ -274,10 +280,10 @@
 
 
             </div>
-     
-     
-     
-     
+
+
+
+
       </div>
       <!-- End of Main Content -->
         <%@include file="../dynamic/boad.jspf"%>

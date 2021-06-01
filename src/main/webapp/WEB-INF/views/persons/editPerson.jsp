@@ -221,6 +221,7 @@
                 Usuń
             </button>
 
+
             <!-- The Modal -->
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
@@ -240,7 +241,8 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
-                            <input type="submit" class="btn btn-danger pull-left" value="Tak"/>
+                            <input type="submit" class="btn btn-danger pull-left" name="delete" value="Tak"/>
+
                         </div>
 
                     </div>
@@ -251,7 +253,7 @@
 
         </div>
         <!-- /.container-fluid -->
-            </form>
+        </form>
 
     </div>
     <!-- End of Main Content -->

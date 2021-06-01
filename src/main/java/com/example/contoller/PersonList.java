@@ -6,10 +6,7 @@ import com.example.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
@@ -55,7 +52,22 @@ public class PersonList {
         personService.editPerson(person, id);
         return new RedirectView("/editPerson/{id}");
 
-//        "/personList"
+    }
+    //nowy maping do usuwania, nie dziala
+    @RequestMapping(value = {"/personList/{id}"}, method = RequestMethod.DELETE)
+    public String deletePerson(Model model, @PathVariable("id") Long id) {
+        personRepository.deleteById(id);
+        model.addAttribute("person", personService.getPerson(id));
+        return "persons/editPerson";
+    }
+
+
+//nowy maping do skilsow ale tez nie dziala
+    @RequestMapping(value = {"/personList/{id}"}, method = RequestMethod.GET)
+    public String getSkills(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("skills", personService.getPerson(id));
+         return "persons/personList";
+
     }
 
 
