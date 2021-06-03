@@ -135,10 +135,8 @@
                                         <td><a href='<c:url value="/editPerson/${title.id}"/>'
                                                class="btn-right btn btn-primary" role="button">Edytuj</a>
                                         </td>
+
                                     </tr>
-                                </c:forEach>
-
-
 
 
                 <!-- The Modal -->
@@ -169,11 +167,12 @@
 
 
 //tutaj probuje cos ogarnac te pola z javy
+
               <h4 class="small
               font-weight-bold">Java <span
-              class="float-right">${skills.java.intValue()}%</span></h4>
+              class="float-right">${title.java.intValue()}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: ${skills.java.intValue()}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: ${title.java}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 
 
 
@@ -181,64 +180,60 @@
               <h4 class="small
               font-weight-bold">Wzorce
               projektowe
-               <span class="float-right">${skills.java}</span></h4>
+               <span class="float-right">${title.bestpractice}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: ${title.bestpractice}%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <h4 class="small
               font-weight-bold">TDD <span
-              class="float-right">50%</span></h4>
+              class="float-right">${title.tdd}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" style="width: ${title.tdd}%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <h4 class="small
               font-weight-bold">Bazy danych SQL
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.question}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${title.question}%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
 
               <h4 class="small
               font-weight-bold">Hibernate JPA
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.hibernate}%</span></h4>
               <div class="progress">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: ${title.hibernate}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div><br>
 
                <h4 class="small
               font-weight-bold">HTML, CSS
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.html}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${title.html}%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
                  <h4 class="small
               font-weight-bold">JSP
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.jsp}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${title.jsp}%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
                  <h4 class="small
               font-weight-bold">Thymeleaf
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.thymeleaf}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${title.thymeleaf}%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
                <h4 class="small
               font-weight-bold">GIT
-              <span class="float-right">50%</span></h4>
+              <span class="float-right">${title.git}%</span></h4>
               <div class="progress mb-4">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: ${title.git}%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
             </div>
           </div>
-
-
-
-
-
-
         </div>
+
+
+
 
         <!-- Modal footer -->
         <div class="modal-footer">
@@ -251,6 +246,8 @@
         </div>
     </div>
 </div>
+
+                                </c:forEach>
 
                                 </tbody>
                             </table>

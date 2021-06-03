@@ -53,20 +53,20 @@ public class PersonList {
         return new RedirectView("/editPerson/{id}");
 
     }
-    //nowy maping do usuwania, nie dziala
-    @RequestMapping(value = {"/personList/{id}"}, method = RequestMethod.DELETE)
-    public String deletePerson(Model model, @PathVariable("id") Long id) {
+
+
+    @RequestMapping(value = {"/deletePerson/{id}"}, method = {RequestMethod.GET, RequestMethod.POST})
+    public RedirectView deletePerson(@PathVariable("id") Long id) {
         personRepository.deleteById(id);
-        model.addAttribute("person", personService.getPerson(id));
-        return "persons/editPerson";
+        return new RedirectView("/personList");
     }
 
 
-//nowy maping do skilsow ale tez nie dziala
+    //nowy maping do skilsow ale tez nie dziala
     @RequestMapping(value = {"/personList/{id}"}, method = RequestMethod.GET)
     public String getSkills(Model model, @PathVariable("id") Long id) {
         model.addAttribute("skills", personService.getPerson(id));
-         return "persons/personList";
+        return "persons/personList";
 
     }
 

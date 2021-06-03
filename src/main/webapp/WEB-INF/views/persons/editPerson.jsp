@@ -85,10 +85,10 @@
             </nav>
             <!-- End of Topbar -->
 
-            <form name="send" method="post" action='<c:url value="/editPerson/${person.id}"/>'>
+
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    <form name="send" method="post" action='<c:url value="/editPerson/${person.id}"/>'>
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
@@ -214,8 +214,7 @@
 
                     <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany"
                            id="searchButton"></input>
-
-
+            </form>
             <!-- Button to Open the Modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
                 Usuń
@@ -240,12 +239,16 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
+
+                            <form name="send" method="POST" action='<c:url value="/deletePerson/${id}"/>'>
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
-                            <input type="submit" class="btn btn-danger pull-left" name="delete" value="Tak"/>
+
+                            <input type="submit" class="btn btn-danger pull-left"  name="delete" value="Tak"/>
+                            </form>
+
 
                         </div>
-
-                    </div>
+                 </div>
 
                 </div>
             </div>
@@ -253,7 +256,7 @@
 
         </div>
         <!-- /.container-fluid -->
-        </form>
+
 
     </div>
     <!-- End of Main Content -->
