@@ -129,7 +129,9 @@
                                                                 <i class="fas fa-info-circle"></i>
                                                               </a></td>
                                          <td>${title.start}</td>
-                                        <td><a href="#" role="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#umiejetnosci"><i class="fas
+
+                                        <td><a href="#" role="button" class="btn btn-success btn-circle" data-toggle="modal" data-target="#umiejetnosci${title.id}">
+                                            <i class="fas
                                         fa-check"></i></a></td>
 
                                         <td><a href='<c:url value="/editPerson/${title.id}"/>'
@@ -140,7 +142,7 @@
 
 
                 <!-- The Modal -->
-<div class="modal" id="umiejetnosci">
+<div class="modal" id="umiejetnosci${title.id}">
 <div class="modal-dialog">
 <div class="modal-content">
 
@@ -166,11 +168,10 @@
 
 
 
-//tutaj probuje cos ogarnac te pola z javy
 
               <h4 class="small
               font-weight-bold">Java <span
-              class="float-right">${title.java.intValue()}%</span></h4>
+              class="float-right">${title.java}%</span></h4>
               <div class="progress mb-4">
                 <div class="progress-bar bg-danger" role="progressbar" style="width: ${title.java}%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
 
