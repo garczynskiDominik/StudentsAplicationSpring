@@ -54,7 +54,7 @@ public class PersonList {
 
     }
 
-
+// delete row
     @RequestMapping(value = {"/deletePerson/{id}"}, method = {RequestMethod.GET, RequestMethod.POST})
     public RedirectView deletePerson(@PathVariable("id") Long id) {
         personRepository.deleteById(id);
@@ -62,13 +62,6 @@ public class PersonList {
     }
 
 
-    //nowy maping do skilsow ale tez nie dziala
-    @RequestMapping(value = {"/personList/{id}"}, method = RequestMethod.GET)
-    public String getSkills(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("skills", personService.getPerson(id));
-        return "persons/personList";
-
-    }
 
 
 }
