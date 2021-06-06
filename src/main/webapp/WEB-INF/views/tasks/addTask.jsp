@@ -85,6 +85,8 @@
             </nav>
             <!-- End of Topbar -->
 
+            <form name="send" method="post" action='<c:url value="/addTask"/>'>
+
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
@@ -96,7 +98,7 @@
 
 
                                 <div class="form-group row">
-                                    <label for="firstName" class="col-2 col-form-label">Wybierz kursanta</label>
+                                    <label class="col-2 col-form-label">Wybierz kursanta</label>
                                     <div class="col-10">
                                         <select class="form-control" id="sel1" name="person.id">
                                             <option hidden>wybierz</option>
@@ -109,9 +111,9 @@
 
 
                                 <div class="form-group row">
-                                    <label for="firstName" class="col-2 col-form-label">Deadline</label>
+                                    <label class="col-2 col-form-label">Deadline</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="date" placeholder="">
+                                        <input class="form-control" type="date" name="deadline" placeholder="">
                                     </div>
                                 </div>
 
@@ -119,7 +121,7 @@
                                 <div class="form-group row">
                                     <label for="start" class="col-2 col-form-label">Tresć zadania:</label>
                                     <div class="col-10">
-                                        <textarea class="form-control" rows="5" id="start"
+                                        <textarea class="form-control" rows="5" id="start" name="contentTask"
                                                   placeholder="tutaj opisz zadanie..."></textarea>
                                     </div>
                                 </div>
@@ -137,29 +139,31 @@
 
                             <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row">
+
+
                                     <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio" value="border-left-success"
-                                                                           checked>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="checkbox" value="0" checked>
                                             <i class="btn btn-success btn-circle btn-sm"></i> poziom junior</label>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio" value="border-left-info"
-                                                                           checked>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="checkbox" value="1" checked>
                                             <i class="btn btn-info btn-circle btn-sm"></i> poziom junior+</label>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio" value="border-left-secondary"
-                                                                           checked>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="checkbox" value="2" checked>
                                             <i class="btn btn-secondary btn-circle btn-sm"></i> poziom mid</label>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio" value="border-left-primary"
-                                                                           checked>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="checkbox" value="3" checked>
                                             <i class="btn btn-primary btn-circle btn-sm"></i> poziom mid+</label>
                                     </div>
                                     <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio" value="border-left-danger"
-                                                                           checked>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="checkbox" value="4" checked>
                                             <i class="btn btn-danger btn-circle btn-sm"></i> poziom senior</label>
                                     </div>
 
@@ -175,6 +179,7 @@
 
             </div>
             <!-- /.container-fluid -->
+            </form>
 
         </div>
         <!-- End of Main Content -->

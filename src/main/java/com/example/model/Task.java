@@ -1,32 +1,37 @@
 package com.example.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
+
+
+@AllArgsConstructor
+@Getter
+@Setter
 
 @Entity
 @Table
-@Getter
-@Setter
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @DateTimeFormat(pattern = "yyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date deadline;
+    @CreationTimestamp
+    private LocalDate dateAdd;
+    private String contentTask;
+    private int checkbox;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id")
     private Person person;
 
-    public Task(Long id, Date deadline, Person person) {
-        this.id = id;
-        this.deadline = deadline;
-        this.person = person;
-    }
 
     public Task() {
     }

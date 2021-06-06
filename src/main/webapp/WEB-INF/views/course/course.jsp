@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <%@include file="../dynamic/css.jspf"%>
@@ -101,7 +102,12 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ilość
                                             (kursanci)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">323 </div>
+
+
+
+
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-users fa-2x text-gray-300"></i>

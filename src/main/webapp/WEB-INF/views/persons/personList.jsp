@@ -125,7 +125,7 @@
                                     <tr>
                                         <td>${title.firstName}</td>
                                         <td>${title.lastName}</td>
-                                        <td><a href='<c:url value="${title.gitHub}"/> ' class="btn btn-info btn-circle">
+                                        <td><a href='<c:url value="${title.gitHub}"/>' class="btn btn-info btn-circle">
                                                                 <i class="fas fa-info-circle"></i>
                                                               </a></td>
                                          <td>${title.start}</td>
