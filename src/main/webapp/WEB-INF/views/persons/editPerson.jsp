@@ -237,18 +237,18 @@
                             Jeżeli usuniesz to już nie będzie odwrotu
                         </div>
 
+
                         <!-- Modal footer -->
                         <div class="modal-footer">
-
                             <form name="send" method="POST" action='<c:url value="/deletePerson/${id}"/>'>
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
-
                             <input type="submit" class="btn btn-danger pull-left"  name="delete" value="Tak"/>
                             </form>
 
-
                         </div>
-                 </div>
+
+
+                    </div>
 
                 </div>
             </div>

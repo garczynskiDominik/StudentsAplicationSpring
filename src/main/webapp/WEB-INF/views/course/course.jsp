@@ -102,9 +102,9 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ilość
                                             (kursanci)
                                         </div>
-
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">323 </div>
-
+<c:forEach items="${person}" var="title">
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${title}</div>
+</c:forEach>
 
 
 
