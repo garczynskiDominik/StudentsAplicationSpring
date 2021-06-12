@@ -6,6 +6,7 @@ import com.example.repository.PersonRepository;
 import com.example.repository.TaskRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,6 @@ public class Tasks {
     }
 
 
-
     //get all tassks
     @RequestMapping(value = {"/tasks"}, method = RequestMethod.GET)
     public String getAllTasks(Model model) {
@@ -35,20 +35,23 @@ public class Tasks {
         // return "tasks/addTask";
     }
 
-
+    //add task
     @RequestMapping(value = {"addTask"}, method = RequestMethod.POST)
     public RedirectView postAdNewTask(@ModelAttribute Task newTask) {
         taskRepository.save(newTask);
         return new RedirectView("tasks");
     }
 
+    //get all tasks
     @RequestMapping(value = {"/addTasks"}, method = RequestMethod.GET)
     public String getAddTasks(Model model) {
-
         List<Person> list = personRepository.findAll();
         model.addAttribute("person", list);
         return "tasks/addTask";
     }
+
+
+
 }
 
 

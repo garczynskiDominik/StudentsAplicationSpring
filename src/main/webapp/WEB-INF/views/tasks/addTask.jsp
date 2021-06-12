@@ -113,7 +113,9 @@
                                 <div class="form-group row">
                                     <label class="col-2 col-form-label">Deadline</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="date" name="deadline" placeholder="">
+
+<%--                                        dodac date minimalna--%>
+                                        <input class="form-control" type="date" name="deadline" max="3000-12-31" min="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}"/>">
                                     </div>
                                 </div>
 
