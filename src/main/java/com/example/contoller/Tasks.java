@@ -6,13 +6,11 @@ import com.example.repository.PersonRepository;
 import com.example.repository.TaskRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class Tasks {
@@ -50,6 +48,14 @@ public class Tasks {
         return "tasks/addTask";
     }
 
+    @RequestMapping(value = {"editTask/{id}"}, method = RequestMethod.GET)
+    public String editTask(Model model, @PathVariable("id") Long id) {
+        List<Person> list = personRepository.findAll();
+//        Task task = taskRepository.findById(id);
+        model.addAttribute("person", list);
+        model.addAttribute("task", taskRepository.getOne(id));
+        return "tasks/editTask";
+    }
 
 
 }

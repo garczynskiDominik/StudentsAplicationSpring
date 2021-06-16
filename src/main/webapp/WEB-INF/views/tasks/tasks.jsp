@@ -148,6 +148,7 @@
 
 
                                 <c:forEach items="${task}" var="title">
+                                    <a href="<c:url value="/editTask/${title.id}"/>">
                                     <div class="card mb-4 py-3 <c:choose>
                                  <c:when test="${title.checkbox eq '0'}">border-left-success</c:when>
                                    <c:when test="${title.checkbox eq '1'}">border-left-info</c:when>
@@ -164,6 +165,7 @@
                                                 ${title.contentTask}
                                         </div>
                                     </div>
+                                    </a>
                                 </c:forEach>
 
                             </div>
