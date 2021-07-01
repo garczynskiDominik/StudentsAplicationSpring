@@ -85,108 +85,152 @@
             </nav>
             <!-- End of Topbar -->
 
-            <form name="send" method="post" action='<c:url value="#"/>'>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
-                <!-- Content Row -->
-                <div class="row">
-                    <div class="col-xl-12 col-md-12 mb-12">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-
-
-                                <div class="form-group row">
-                                    <label class="col-2 col-form-label">Wybierz kursanta</label>
-                                    <div class="col-10">
-                                        <select class="form-control" id="sel1" name="person.id">
-                                            <option hidden value="${task.person.id}>${task.person.firstName} ${task.person.lastName}</option>
+                <form name="send" method="post" action='<c:url value="/editTask/${task.id}"/>'>
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 mb-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
 
 
-                                            <c:forEach items="${person}" var="title">
-                                                <option value="${title.id}">${title.firstName} ${title.lastName}</option>
-                                            </c:forEach>
-                                        </select>
+                                    <div class="form-group row">
+                                        <label class="col-2 col-form-label">Wybierz kursanta</label>
+                                        <div class="col-10">
+                                            <select class="form-control" id="person.id" name="person.id">
+                                                <option hidden
+                                                        value="${task.person.id}">${task.person.firstName} ${task.person.lastName}</option>
+
+
+                                                <c:forEach items="${person}" var="title">
+                                                    <option value="${title.id}">${title.firstName} ${title.lastName}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="form-group row">
-                                    <label class="col-2 col-form-label">Deadline</label>
-                                    <div class="col-10">
+                                    <div class="form-group row">
+                                        <label class="col-2 col-form-label">Deadline</label>
+                                        <div class="col-10">
 
-<%--                                        dodac date minimalna--%>
-                                        <input class="form-control" type="date" name="deadline" max="3000-12-31" min="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}"/>">
+                                            <%--                                        dodac date minimalna--%>
+                                            <input class="form-control" type="date" name="deadline" max="3000-12-31"
+                                                   min="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}"/>">
+                                        </div>
                                     </div>
-                                </div>
 
 
-                                <div class="form-group row">
-                                    <label for="start" class="col-2 col-form-label">Tresć zadania:</label>
-                                    <div class="col-10">
+                                    <div class="form-group row">
+                                        <label for="start" class="col-2 col-form-label">Tresć zadania:</label>
+                                        <div class="col-10">
                                         <textarea class="form-control" rows="5" id="start" name="contentTask"
                                                   placeholder="tutaj opisz zadanie...">${task.contentTask}</textarea>
+                                        </div>
                                     </div>
-                                </div>
 
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <div class="form-group row">
-<%--                            <c:if test="${task.checkbox eq ""}">checked</c:if>--%>
-
-
-                            <div class="col-md-9 col-sm-9 col-xs-9">
-                                <div class="row">
-
-
-
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio"
-                                                                           name="checkbox" value="0" <c:if test="${task.checkbox eq 0}">checked</c:if>>
-                                            <i class="btn btn-success btn-circle btn-sm"></i> poziom junior</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio"
-                                                                           name="checkbox" value="1" <c:if test="${task.checkbox eq 1}">checked</c:if>>
-                                            <i class="btn btn-info btn-circle btn-sm"></i> poziom junior+</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio"
-                                                                           name="checkbox" value="2" <c:if test="${task.checkbox eq 2}">checked</c:if>>
-                                            <i class="btn btn-secondary btn-circle btn-sm"></i> poziom mid</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio"
-                                                                           name="checkbox" value="3" <c:if test="${task.checkbox eq 3}">checked</c:if>>
-                                            <i class="btn btn-primary btn-circle btn-sm"></i> poziom mid+</label>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline"><input type="radio"
-                                                                           name="checkbox" value="4" <c:if test="${task.checkbox eq 4}">checked</c:if>>
-                                            <i class="btn btn-danger btn-circle btn-sm"></i> poziom senior</label>
-                                    </div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <div class="form-group row">
+                                <%--                            <c:if test="${task.checkbox eq ""}">checked</c:if>--%>
+
+
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <div class="row">
+
+
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline"><input type="radio"
+                                                                               name="checkbox" value="0"
+                                                                               <c:if test="${task.checkbox eq 0}">checked</c:if>>
+                                                <i class="btn btn-success btn-circle btn-sm"></i> poziom junior</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline"><input type="radio"
+                                                                               name="checkbox" value="1"
+                                                                               <c:if test="${task.checkbox eq 1}">checked</c:if>>
+                                                <i class="btn btn-info btn-circle btn-sm"></i> poziom junior+</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline"><input type="radio"
+                                                                               name="checkbox" value="2"
+                                                                               <c:if test="${task.checkbox eq 2}">checked</c:if>>
+                                                <i class="btn btn-secondary btn-circle btn-sm"></i> poziom mid</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline"><input type="radio"
+                                                                               name="checkbox" value="3"
+                                                                               <c:if test="${task.checkbox eq 3}">checked</c:if>>
+                                                <i class="btn btn-primary btn-circle btn-sm"></i> poziom mid+</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline"><input type="radio"
+                                                                               name="checkbox" value="4"
+                                                                               <c:if test="${task.checkbox eq 4}">checked</c:if>>
+                                                <i class="btn btn-danger btn-circle btn-sm"></i> poziom senior</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany"
+                           id="searchButton"></input>
+                </form>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                    Usuń
+                </button>
+
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Czy na pewno chcesz usunąć osobę ?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Jeżeli usuniesz to już nie będzie odwrotu
+                            </div>
+
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <form name="send" method="POST" action='<c:url value="/deleteTask/${id}"/>'>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
+                                    <input type="submit" class="btn btn-danger pull-left" name="delete" value="Tak"/>
+                                </form>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
                 </div>
-
-
-                <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="searchButton"></input>
-
 
             </div>
+
+
             <!-- /.container-fluid -->
-            </form>
+
 
         </div>
         <!-- End of Main Content -->
