@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 <%@include file="../dynamic/css.jspf" %>
@@ -148,7 +149,12 @@
 
 
                                 <c:forEach items="${task}" var="title">
-                                    <a href="<c:url value="/editTask/${title.id}"/>">
+
+
+                                    <sec:authorize access="hasRole('ADMIN')">
+                                        <a href="<c:url value="/editTask/${title.id}"/>">
+                                    </sec:authorize>
+
                                     <div class="card mb-4 py-3 <c:choose>
                                  <c:when test="${title.checkbox eq '0'}">border-left-success</c:when>
                                    <c:when test="${title.checkbox eq '1'}">border-left-info</c:when>

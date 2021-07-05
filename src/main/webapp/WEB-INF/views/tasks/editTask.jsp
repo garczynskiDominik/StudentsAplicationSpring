@@ -188,57 +188,33 @@
                     <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany"
                            id="searchButton"></input>
                 </form>
-                <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                    Usuń
-                </button>
 
 
-                <!-- The Modal -->
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Czy na pewno chcesz usunąć osobę ?</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                Jeżeli usuniesz to już nie będzie odwrotu
-                            </div>
-
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <form name="send" method="POST" action='<c:url value="/deleteTask/${id}"/>'>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
-                                    <input type="submit" class="btn btn-danger pull-left" name="delete" value="Tak"/>
-                                </form>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
+<%--                <form name="send" method="POST" action='<c:url value="/deleteTask/${task.id}"/>'>--%>
+                <%--                    <input type="submit" class="btn btn-danger pull-left"  name="delete" value="Usuń"/>--%>
+                <%--                </form>--%>
 
             </div>
 
 
-            <!-- /.container-fluid -->
-
-
         </div>
-        <!-- End of Main Content -->
 
-        <%@include file="../dynamic/boad.jspf" %>
+    </div>
+</div>
+
+</div>
 
 
-        <%@include file="../dynamic/javaScript.jspf" %>
+<!-- /.container-fluid -->
+
+
+</div>
+<!-- End of Main Content -->
+
+<%@include file="../dynamic/boad.jspf" %>
+
+
+<%@include file="../dynamic/javaScript.jspf" %>
 
 </body>
 

@@ -54,8 +54,9 @@ public class Tasks {
     @RequestMapping(value = {"editTask/{id}"}, method = RequestMethod.GET)
     public String editTask(Model model, @PathVariable("id") Long id) {
         List<Person> list = personRepository.findAll();
+//        Optional<Task> task = taskRepository.findById(id);
         model.addAttribute("person", list);
-        model.addAttribute("task", taskService.getTask(id));
+        model.addAttribute("task", taskRepository.getOne(id));
         return "tasks/editTask";
     }
 
@@ -69,7 +70,7 @@ public class Tasks {
 
 
     @RequestMapping(value = {"/deleteTask/{id}"}, method = {RequestMethod.GET, RequestMethod.POST})
-    public RedirectView deletePerson(@PathVariable("id") Long id) {
+    public RedirectView deleteTask(@PathVariable("id") Long id) {
         taskRepository.deleteById(id);
         return new RedirectView("/tasks");
     }

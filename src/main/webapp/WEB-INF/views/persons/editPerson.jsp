@@ -86,9 +86,9 @@
             <!-- End of Topbar -->
 
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <form name="send" method="post" action='<c:url value="/editPerson/${person.id}"/>'>
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <form name="send" method="post" action='<c:url value="/editPerson/${person.id}"/>'>
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
@@ -97,32 +97,36 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Imię</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="firstName" value="${person.firstName}">
+                                            <input class="form-control" type="text" name="firstName"
+                                                   value="${person.firstName}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Nazwisko</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="lastName" value="${person.lastName}">
+                                            <input class="form-control" type="text" name="lastName"
+                                                   value="${person.lastName}">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label  class="col-2 col-form-label">URL Git</label>
+                                        <label class="col-2 col-form-label">URL Git</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="gitHub" value="${person.gitHub}">
+                                            <input class="form-control" type="text" name="gitHub"
+                                                   value="${person.gitHub}">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label  class="col-2 col-form-label">Od czego się zaczęło:</label>
+                                        <label class="col-2 col-form-label">Od czego się zaczęło:</label>
                                         <div class="col-10">
-                                            <textarea class="form-control" name="start" rows="5">${person.start}</textarea>
+                                            <textarea class="form-control" name="start"
+                                                      rows="5">${person.start}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label  class="col-2 col-form-label">Czy kursant opanował
+                                        <label class="col-2 col-form-label">Czy kursant opanował
                                             jakieś technologie ?</label>
                                         <div class="col-1">
                                             <label class="radio-inline"><input type="radio" id="question"
@@ -145,126 +149,135 @@
                         </div>
 
 
-                     <c:if test="${person.checkbox eq '1'}"> <!-- Content Row -->
+                        <c:if test="${person.checkbox eq '1'}"> <!-- Content Row -->
 
-                        <div class="col-xl-12 col-md-12 mb-12">
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
+                            <div class="col-xl-12 col-md-12 mb-12">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
 
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <label  class="col-form-label">Java</label>
-                                            <input class="form-control" type="text" name="java" value="${person.java}">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <label class="col-form-label">Java</label>
+                                                <input class="form-control" type="text" name="java"
+                                                       value="${person.java}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">Wzorce projektowe</label>
+                                                <input class="form-control" type="text" name="bestpractice"
+                                                       value="${person.bestpractice}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">TDD</label>
+                                                <input class="form-control" type="text" name="tdd"
+                                                       value="${person.tdd}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">Bazy danych SQL</label>
+                                                <input class="form-control" type="text" name="question"
+                                                       value="${person.question}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">Hibernate JPA</label>
+                                                <input class="form-control" type="text" name="hibernate"
+                                                       value="${person.hibernate}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">HTML_CSS</label>
+                                                <input class="form-control" type="text" name="html"
+                                                       value="${person.html}">
+                                            </div>
+
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">JSP</label>
+                                                <input class="form-control" type="text" name="jsp"
+                                                       value="${person.jsp}">
+                                            </div>
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">Thymeleaf</label>
+                                                <input class="form-control" type="text" name="thymeleaf"
+                                                       value="${person.thymeleaf}">
+                                            </div>
+
+                                            <div class="col-2">
+                                                <label class="col-form-label">git</label>
+                                                <input class="form-control" type="text" name="git"
+                                                       value="${person.git}">
+                                            </div>
+
+
                                         </div>
-
-
-                                        <div class="col-2">
-                                            <label  class="col-form-label">Wzorce projektowe</label>
-                                            <input class="form-control" type="text" name="bestpractice" value="${person.bestpractice}">
-                                        </div>
-
-
-                                        <div class="col-2">
-                                            <label  class="col-form-label">TDD</label>
-                                            <input class="form-control" type="text" name="tdd" value="${person.tdd}">
-                                        </div>
-
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">Bazy danych SQL</label>
-                                            <input class="form-control" type="text" name="question" value="${person.question}">
-                                        </div>
-
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">Hibernate JPA</label>
-                                            <input class="form-control" type="text" name="hibernate" value="${person.hibernate}">
-                                        </div>
-
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">HTML_CSS</label>
-                                            <input class="form-control" type="text" name="html" value="${person.html}">
-                                        </div>
-
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">JSP</label>
-                                            <input class="form-control" type="text" name="jsp" value="${person.jsp}">
-                                        </div>
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">Thymeleaf</label>
-                                            <input class="form-control" type="text" name="thymeleaf" value="${person.thymeleaf}">
-                                        </div>
-
-                                        <div class="col-2">
-                                            <label class="col-form-label">git</label>
-                                            <input class="form-control" type="text" name="git" value="${person.git}">
-                                        </div>
-
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                     </c:if>
+                        </c:if>
                     </div>
 
 
                     <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany"
                            id="searchButton"></input>
-            </form>
-            <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                Usuń
-            </button>
+                </form>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                    Usuń
+                </button>
 
 
-            <!-- The Modal -->
-            <div class="modal" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
 
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Czy na pewno chcesz usunąć osobę ?</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Czy na pewno chcesz usunąć osobę ?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                Jeżeli usuniesz to już nie będzie odwrotu
+                            </div>
+
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <form name="send" method="POST" action='<c:url value="/deletePerson/${id}"/>'>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
+                                    <input type="submit" class="btn btn-danger pull-left" name="delete" value="Tak"/>
+                                </form>
+
+                            </div>
+
+
                         </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            Jeżeli usuniesz to już nie będzie odwrotu
-                        </div>
-
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <form name="send" method="POST" action='<c:url value="/deletePerson/${id}"/>'>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Anuluj</button>
-                            <input type="submit" class="btn btn-danger pull-left"  name="delete" value="Tak"/>
-                            </form>
-
-                        </div>
-
 
                     </div>
-
                 </div>
+
+
             </div>
+            <!-- /.container-fluid -->
 
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- End of Main Content -->
+
+        <%@include file="../dynamic/boad.jspf" %>
 
 
-    </div>
-    <!-- End of Main Content -->
-
-    <%@include file="../dynamic/boad.jspf" %>
-
-
-    <%@include file="../dynamic/javaScript.jspf" %>
+        <%@include file="../dynamic/javaScript.jspf" %>
 </body>
 
 </html>
