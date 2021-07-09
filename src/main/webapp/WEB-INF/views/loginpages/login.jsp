@@ -4,6 +4,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 
+
+
 <%@include file="../dynamic/css.jspf"%>
 
 
@@ -47,9 +49,9 @@
                     <hr>
                   
                   </form>
-                  <div class="text-center">
-                    <a class="small" href='<c:url value="/register"/>'>Utwórz konto!</a>
-                  </div>
+<%--                  <div class="text-center">--%>
+<%--                    <a class="small" href='<c:url value="/register"/>'>Utwórz konto!</a>--%>
+<%--                  </div>--%>
                 </div>
               </div>
             </div>

@@ -165,8 +165,8 @@
                                         <div class="card-body">
                                             <div class="text-xs font-weight-bold
                                            text-primary text-uppercase mb-1">${title.person.firstName} ${title.person.lastName}
-                                                <strong>Dodano:</strong> ${title.dateAdd} | <strong>Deadline:</strong>
-                                                    ${title.deadline}
+                                                <strong>Dodano:</strong> ${title.dateAdd}|
+                                                <strong>Deadline:</strong>${title.deadline}
                                             </div>
                                                 ${title.contentTask}
                                         </div>
