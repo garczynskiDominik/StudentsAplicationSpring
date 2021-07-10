@@ -104,7 +104,6 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
             <plugins>
 
                 <plugin>
@@ -123,7 +122,6 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
 
 </project>
