@@ -1,17 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 
-<%@include file="dynamic/css.jspf"%>
+<%@include file="dynamic/css.jspf" %>
 
 <body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <%@include file="dynamic/navigationMain.jspf"%>
+    <%@include file="dynamic/navigationMain.jspf" %>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -62,16 +63,17 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Imię nazwisko</span>
+                            <sec:authorize access="hasRole('USER')">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">USER</span>
+                            </sec:authorize>
+                            <sec:authorize access="hasRole('ADMIN')">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN</span>
+                            </sec:authorize>
 
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
-                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -101,7 +103,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ilość
                                             (kursanci)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -167,7 +169,7 @@
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                             Technologie
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">9</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-cogs fa-2x text-gray-300"></i>
@@ -185,8 +187,8 @@
 
             <div class="jumbotron">
 
-                <h1>Projekt zajęciowy</h1>
-                <p>Bootstrap + JSP + Spring Boot + MySQL</p>
+                <h1>Projekt techniczny</h1>
+                <p>Bootstrap + JSP + Spring Boot + Postgres</p>
 
             </div>
 
@@ -194,10 +196,10 @@
         </div>
         <!-- End of Main Content -->
 
-        <%@include file="dynamic/boad.jspf"%>
+        <%@include file="dynamic/boad.jspf" %>
 
 
-<%@include file="dynamic/javaScript.jspf"%>
+        <%@include file="dynamic/javaScript.jspf" %>
 
 </body>
 
