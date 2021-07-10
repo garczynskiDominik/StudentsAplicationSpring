@@ -30,10 +30,10 @@
                   </div>
                   <form method="post" action='<c:url value="/login"/>'>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="username" id="username" aria-describedby="emailHelp" placeholder="Wprowadź użytkownika..">
+                      <input type="text" class="form-control form-control-user" name="username" id="username" aria-describedby="emailHelp" placeholder="Wprowadź użytkownika.. admin lub user">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Hasło">
+                      <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Hasło: admin lub user">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
