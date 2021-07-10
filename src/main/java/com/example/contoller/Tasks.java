@@ -38,7 +38,7 @@ public class Tasks {
 
     //add task
 
-    @RequestMapping(value = {"addTask"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"addTasks"}, method = RequestMethod.POST)
     public RedirectView postAdNewTask(@ModelAttribute Task newTask) {
         taskRepository.save(newTask);
         return new RedirectView("tasks");

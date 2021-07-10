@@ -85,7 +85,7 @@
             </nav>
             <!-- End of Topbar -->
 
-            <form name="send" method="post" action='<c:url value="/addTask"/>'>
+            <form name="send" method="post" action='<c:url value="/addTasks"/>'>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
