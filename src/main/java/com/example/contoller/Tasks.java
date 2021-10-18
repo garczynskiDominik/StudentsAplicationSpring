@@ -5,15 +5,16 @@ import com.example.model.Task;
 import com.example.repository.PersonRepository;
 import com.example.repository.TaskRepository;
 import com.example.service.TaskService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
+@RequiredArgsConstructor
 public class Tasks {
 
 
@@ -21,12 +22,6 @@ public class Tasks {
     private final TaskService taskService;
     private final PersonRepository personRepository;
 
-
-    public Tasks(TaskRepository taskRepository, TaskService taskService, PersonRepository personRepository) {
-        this.taskRepository = taskRepository;
-        this.taskService = taskService;
-        this.personRepository = personRepository;
-    }
 
     //get all tassks
     @RequestMapping(value = {"/tasks"}, method = RequestMethod.GET)

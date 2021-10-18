@@ -2,18 +2,17 @@ package com.example.service;
 
 import com.example.model.Task;
 import com.example.repository.TaskRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
-@Service
+@Service@RequiredArgsConstructor
 public class TaskService {
+
     private final TaskRepository taskRepository;
 
-    public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
 
 
     public List<Task> getTaskList() {

@@ -2,18 +2,16 @@ package com.example.service;
 
 import com.example.model.Person;
 import com.example.repository.PersonRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PersonService {
     private final PersonRepository personRepository;
 
-    //wsztrzykiwanie przez konstruktor
-    public PersonService(PersonRepository personRepository) {
-        this.personRepository = personRepository;
-    }
 
     public List<Person> getPersonList() {
         return personRepository.findAll();

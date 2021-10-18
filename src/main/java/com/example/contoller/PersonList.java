@@ -4,6 +4,7 @@ import com.example.model.Person;
 import com.example.repository.PersonRepository;
 import com.example.service.PersonService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Controller
 public class PersonList {
     private final PersonService personService;
