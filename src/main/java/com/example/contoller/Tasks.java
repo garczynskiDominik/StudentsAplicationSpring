@@ -22,50 +22,42 @@ public class Tasks {
     private final TaskService taskService;
     private final PersonRepository personRepository;
 
-
-    //get all tassks
-    @RequestMapping(value = {"/tasks"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/tasks"})
     public String getAllTasks(Model model) {
         List<Task> list = taskRepository.findAll();
         model.addAttribute("task", list);
         return "tasks/tasks";
     }
 
-    //add task
-
-    @RequestMapping(value = {"addTasks"}, method = RequestMethod.POST)
+    @PostMapping(value = {"addTasks"})
     public RedirectView postAdNewTask(@ModelAttribute Task newTask) {
         taskRepository.save(newTask);
         return new RedirectView("tasks");
     }
 
-    //    get all tasks
-    @RequestMapping(value = {"/addTasks"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/addTasks"})
     public String getAddTasks(Model model) {
         List<Person> list = personRepository.findAll();
         model.addAttribute("person", list);
         return "tasks/addTask";
     }
 
-    @RequestMapping(value = {"editTask/{id}"}, method = RequestMethod.GET)
+    @GetMapping(value = {"editTask/{id}"})
     public String editTask(Model model, @PathVariable("id") Long id) {
         List<Person> list = personRepository.findAll();
-//        Optional<Task> task = taskRepository.findById(id);
         model.addAttribute("person", list);
         model.addAttribute("task", taskRepository.getOne(id));
         return "tasks/editTask";
     }
 
-
-    @RequestMapping(value = {"/editTask/{id}"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/editTask/{id}"})
     public RedirectView EditTask(@ModelAttribute Task task, @PathVariable("id") Long id) {
         taskService.editTask(task, id);
         return new RedirectView("/editTask/{id}");
 
     }
 
-
-    @RequestMapping(value = {"/deleteTask/{id}"}, method = {RequestMethod.GET, RequestMethod.POST})
+    @PostMapping(value = {"/deleteTask/{id}"})
     public RedirectView deleteTask(@PathVariable("id") Long id) {
         taskRepository.deleteById(id);
         return new RedirectView("/tasks");

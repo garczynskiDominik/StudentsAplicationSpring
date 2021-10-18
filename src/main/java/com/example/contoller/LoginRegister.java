@@ -1,25 +1,24 @@
 package com.example.contoller;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LoginRegister {
 
 
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/login"})
     public String getLogin() {
         return "loginpages/login";
     }
 
-    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/login"})
     public String postLogin() {
         return "loginpages/login";
     }
 
-    @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/register"})
     public String getRegister() {
         return "loginpages/register";
     }

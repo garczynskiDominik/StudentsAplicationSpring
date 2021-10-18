@@ -30,22 +30,6 @@ public class Task {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id")
     private Person person;
-
-
-//    public Task(Long id, Date deadline, LocalDate dateAdd, String contentTask, int checkbox) {
-//        this.id = id;
-//        this.deadline = deadline;
-//        this.dateAdd = dateAdd;
-//        this.contentTask = contentTask;
-//        this.checkbox = checkbox;
-//    }
-//
-//    public Task(Date deadline, LocalDate dateAdd, String contentTask, int checkbox){
-//    }
-//
-//    public Task(Long id, Date deadline, String contentTask, int checkbox) {
-//
-//    }
 }
 
 

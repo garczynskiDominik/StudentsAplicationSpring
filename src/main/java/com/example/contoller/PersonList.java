@@ -3,7 +3,6 @@ package com.example.contoller;
 import com.example.model.Person;
 import com.example.repository.PersonRepository;
 import com.example.service.PersonService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,43 +19,39 @@ public class PersonList {
     private final PersonRepository personRepository;
 
 
-    //get all persons
-    @RequestMapping(value = {"/personList"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/personList"})
     public String getPersonList(Model model) {
         List<Person> list = personRepository.findAll();
         model.addAttribute("person", list);
         return "persons/personList";
     }
 
-    @RequestMapping(value = {"/addNewPerson"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/addNewPerson"})
     public String getAddNewPerson() {
         return "persons/addNewPerson";
     }
 
-    //save person in database and show personList after
-    @RequestMapping(value = {"/addNewPerson"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/addNewPerson"})
     public RedirectView postAddNewPerson(@ModelAttribute Person newPerson) {
         personRepository.save(newPerson);
         return new RedirectView("/personList");
     }
 
-    //edit person i database
-    @RequestMapping(value = {"/editPerson/{id}"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/editPerson/{id}"})
     public String getEditPerson(Model model, @PathVariable("id") Long id) {
         model.addAttribute("person", personService.getPerson(id));
         return "persons/editPerson";
     }
 
 
-    @RequestMapping(value = {"/editPerson/{id}"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/editPerson/{id}"})
     public RedirectView saveEditPerson(@ModelAttribute Person person, @PathVariable("id") Long id) {
         personService.editPerson(person, id);
         return new RedirectView("/editPerson/{id}");
 
     }
 
-// delete row
-    @RequestMapping(value = {"/deletePerson/{id}"}, method = {RequestMethod.GET, RequestMethod.POST})
+    @PostMapping(value = {"/deletePerson/{id}"})
     public RedirectView deletePerson(@PathVariable("id") Long id) {
         personRepository.deleteById(id);
         return new RedirectView("/personList");
